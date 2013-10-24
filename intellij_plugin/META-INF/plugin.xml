@@ -1,0 +1,81 @@
+<idea-plugin version="2">
+    <name>Fitnesse Integration</name>
+    <id>FitnesseInt</id>
+    <description>
+        <![CDATA[
+        <p>This plugin provides integration with Fitnesse
+        Acceptance Testing Framework(www.fitnesse.org).</p>
+        <p>there is a mailing list for feature requests,
+        bugs, and other comments:
+        http://tech.groups.yahoo.com/group/fitnesse_plugin</p>
+        <p>Here are the features:</p>
+        <ul>
+            <li>syntax highlighting</li>
+            <li>start/stop and configuration of fitnesse
+            server</li>
+            <li>navigation between wiki markup and fixture
+            (not implemented yet)</li>
+            <li>stubbing of tables and fixtures (not
+            implemented yet)</li>
+        </ul>
+        <p>How to use:</p>
+        <ul>
+            <li>When the plugin is installed the syntax
+            highlighting takes over *.txt files and
+            provides fitnesse wiki highlighting.</li>
+            <li>To disable support goto  File > Settings
+            > Fitnesse</li>
+            <li>To run fitnesse go to Run > Edit
+            Configurations... > Add New Configuration, and
+            select Fitnesse Server. Then you can configure
+            the parameters for running fitnesse from
+            within IDEA. </li>
+        </ul>
+        <p>Known Isuues:</p>
+        <ul>
+            <li>When wanting to disable syntax highlighting
+            of *.txt files it is neccessary to restart IDEA.
+            I am not sure why.</li>
+            <li>An unwanted default port of 0 is set when
+            creating a new fitnesse run configuration.</li>
+        </ul>
+
+        ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+        <ul><u><b>Version 0.7 changes</b></u>
+            <li>feature: start/stop fitnesse server.</li>
+        </ul>
+        <ul><u><b>Version 0.6.1 changes</b></u>
+            <li>bug fix: lists and strikeouts properly highlighted.</li>
+            <li>bug fix: preformatted text not all highlighted.</li>
+            <li>bug fix: error in bundle properties.</li>
+            <li>bug fix: proper formatting of plugin description and change-notes.</li>
+        </ul>
+        <ul><u><b>Version 0.6 changes</b></u>
+            <li>bug fix: completed a default color schema for highlighting.</li>
+        </ul>
+        <ul><u><b>Version 0.5 changes</b></u>
+            <li>feature: Syntax highlighting of *.txt files.</li>
+            <li>feature: Syntax highlighting configuration screen.</li>
+            <li>feature: Enable/Disable dialog in settings panel.</li>
+        </ul>
+        ]]>
+    </change-notes>
+    <version>0.7</version>
+    <vendor email="florian.hehlen@bluewin.ch">Lingo-Abacus</vendor>
+    <idea-version since-build="5755"/>
+    <resource-bundle>com.lingo.abacus.intellij.plugin.fitnesse.FitnesseBundle</resource-bundle>
+
+    <application-components>
+        <component>
+            <implementation-class>com.lingo.abacus.intellij.plugin.fitnesse.FitnesseWikiLanguageSupportLoader</implementation-class>
+        </component>
+        <component>
+      <implementation-class>com.lingo.abacus.intellij.plugin.fitnesse.runner.FitnesseRunConfigurationType</implementation-class>
+    </component>
+    </application-components>
+
+
+</idea-plugin>

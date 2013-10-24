@@ -1,22 +1,5 @@
 package fitnesse.wiki.fs;
 
-import fitnesse.wiki.PageData;
-import fitnesse.wiki.VersionInfo;
-import fitnesse.wiki.WikiPageProperties;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Date;
-
 import fitnesse.util.Cache;
 import fitnesse.wiki.PageData;
 import fitnesse.wiki.VersionInfo;
@@ -24,13 +7,18 @@ import fitnesse.wiki.WikiPageProperties;
 import util.Clock;
 import util.FileUtil;
 
+import java.io.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Date;
+
 import static fitnesse.wiki.VersionInfo.makeVersionInfo;
 
 public class SimpleFileVersionsController implements VersionsController, FileVersionsController {
 
   public static final int CACHE_TIMEOUT = 300000; // ms
 
-  public static final String contentFilename = "content.txt";
+  public static final String contentFilename = "content.java";
   public static final String propertiesFilename = "properties.xml";
 
   private final FileSystem fileSystem;

@@ -2,17 +2,13 @@
 // Released under the terms of the CPL Common Public License version 1.0.
 package fitnesse.wiki.fs;
 
+import fitnesse.wiki.*;
+import fitnesse.wikitext.parser.VariableSource;
+import fitnesse.wikitext.parser.WikiWordPath;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
-import fitnesse.wiki.BaseWikiPage;
-import fitnesse.wiki.PageData;
-import fitnesse.wiki.ReadOnlyPageData;
-import fitnesse.wiki.VersionInfo;
-import fitnesse.wiki.WikiPage;
-import fitnesse.wikitext.parser.VariableSource;
-import fitnesse.wikitext.parser.WikiWordPath;
 
 public class FileSystemPage extends BaseWikiPage {
   private static final long serialVersionUID = 1L;
@@ -83,7 +79,7 @@ public class FileSystemPage extends BaseWikiPage {
 
   private boolean hasContentChild(String path) {
     for (String child : fileSystem.list(path)) {
-      if (child.equals("content.txt")) return true;
+      if (child.equals("content.java")) return true;
     }
     return false;
   }
