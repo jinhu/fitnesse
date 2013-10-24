@@ -1,0 +1,18 @@
+<project name="MyProject" default="help" basedir=".">
+    <description>
+       Support for fitnesse plugin development
+    </description>
+    <taskdef classname="JFlex.anttask.JFlexTask" name="jflex" />
+    <property name="jflexpath" location="src/com/lingo/abacus/intellij/plugin/fitnesse/lang/"/>
+    <target name="help">
+        <echo>available commands:</echo>
+    </target>
+
+    <target name="lexerGen">
+        <jflex file="${jflexpath}/fitnesse.flex"
+               skeleton="${jflexpath}/idea-flex.skeleton"
+               outdir="${jflexpath}/"
+               destdir="${jflexpath}/"
+                               />
+    </target>
+</project>
