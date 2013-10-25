@@ -1,5 +1,6 @@
 package fitnesse.wikitext.parser;
 
+
 public class WikiWordPath {
 
     public static boolean isSingleWikiWord(String s) {
@@ -69,5 +70,9 @@ public class WikiWordPath {
 
     private boolean isCharacter(String candidate, char character, int offset) {
         return candidate.charAt(offset) == character;
+    }
+
+    public static boolean isJavaWord(String resource) {
+        return true;
     }
 }
