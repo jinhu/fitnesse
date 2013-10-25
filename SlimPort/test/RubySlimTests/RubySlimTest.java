@@ -1,7 +1,7 @@
 package fitnesse.slim;
 
 import fitnesse.components.CommandRunner;
-import org.junit.Test;
+import junit.framework.Test;
 
 public class RubySlimTest extends SlimServiceTest {
   private CommandRunner runner;
@@ -26,7 +26,7 @@ public class RubySlimTest extends SlimServiceTest {
     return "TestModule";
   }
 
-  @Test
+ // @Test
   public void junk() throws Exception {
 
   }
